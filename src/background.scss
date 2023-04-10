@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=La+Belle+Aurore");
+@import url("https://fonts.googleapis.com/css?family=Exo:700,800");
+
+//font stack(s)
+$cabin: "Titillium Web", sans-serif;
+$belle: "La Belle Aurore", cursive;
+$exo: "Exo", sans-serif;
+
+// site colours
+$primary-color: #fff;
+$secondary-color: #fed0bb;
+// $accent-color: #44001A;
+
+// text colours
+$text-white: #fff;
+
+body {
+  background-image: url(https://66.media.tumblr.com/0f3927f0017e84b9c6ec69901c5a825a/tumblr_n9lwm7N7VX1tz79vpo1_r1_500.gif);
+  background-repeat: repeat;
+  background-size: auto 100%;
+  -webkit-animation: bgMove 100s infinite;
+  /* Safari 4.0 - 8.0 */
+  animation: bgMove 100s infinite;
+  -webkit-animation-timing-function: linear;
+  /* Safari 4.0 - 8.0 */
+  animation-timing-function: linear;
+  //   background-color: $primary-color;
+  font-family: $cabin;
+}
+
+@keyframes bgMove {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 199% 0%;
+  }
+}
+
+.tags {
+  color: $secondary-color;
+  position: absolute;
+  bottom: 0;
+  left: 90px;
+  font-size: 30px;
+  font-family: $belle;
+}
+.top-tags {
+  bottom: auto;
+  top: 70px;
+}
