@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+.welcome-btn-container {
+  box-sizing: border-box;
+  margin: 0;
+  display: grid;
+  place-content: center;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+:root {
+  --h: 33;
+  --s: 90%;
+  --l: 90%;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.glass {
+  display: none;
+  height: 100%;
+  max-height: 66vh;
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(0.15em);
+  background: hsla(212, 11%, 60%, 0);
+  transition: 0.3s ease;
+  mix-blend-mode: hard-light;
+}
+@media screen and (max-height: 480px) {
+  .glass {
+    padding: 0.8em;
+  }
+}
+
+.welcome-btn {
+  font-size: clamp(1.2rem, 5vw + 1rem, 2.5rem);
+  width: 10em;
+  height: 4em;
+  border-radius: 0.5em;
+  background: hsla(212, 11%, 60%, 0);
+  box-shadow: 0 -0.125em 0.25em rgba(0, 0, 0, 0.1333333333), 0 0.25em 0.25em hsl(var(--h) var(--s) var(--l)/0.5), 0 0 0 0.1em hsl(var(--h) var(--s) var(--l)/0.5), 0 0.175em 0.3em hsl(var(--h) var(--s) var(--l)/0.5) inset, 0 -0.025em 0.175em hsl(var(--h) var(--s) var(--l)/0.4) inset, 0 -0.25em 1em 0.3em hsl(var(--h) var(--s) var(--l)/0.3) inset, 0 0.6em 0 hsl(var(--h) var(--s) var(--l)/0.3) inset, 0 2em 1em rgba(0, 0, 0, 0.2666666667);
+  backdrop-filter: blur(0.15em);
+  place-content: center;
+  color: hsl(var(--h) var(--s) var(--l)/0.7);
+  text-shadow: 0.03em 0.03em rgba(255, 255, 255, 0.3333333333), -0.03em -0.03em rgba(0, 0, 0, 0.3333333333);
+  cursor: pointer;
+  transition: 0.1s ease;
+  padding-top: 0.2em;
+}
+
+.welcome-btn:after {
+  content: "";
+  inset: 0;
+  top: 0.5em;
+  background-image: linear-gradient(105deg, transparent 20%, hsl(var(--h) var(--s) var(--l)/0.2) 20%, hsl(var(--h) var(--s) var(--l)/0.2) 30%, transparent 30%, transparent 32%, hsl(var(--h) var(--s) var(--l)/0.2) 5%, hsl(var(--h) var(--s) var(--l)/0.2) 40%, transparent 0%);
+  background-size: 400% 100%;
+  background-position: 100% 0%;
+  transition: 0.3s ease;
+}
+
+.welcome-btn:active:after {
+  background-position: -50% 0%;
+}
+
+.welcome-btn:active {
+  translate: 0.01em 0.25em;
+  box-shadow: 0 -0.125em 0.25em rgba(0, 0, 0, 0.1333333333), 0 0.25em 0.25em hsl(var(--h) var(--s) var(--l)/0.5), 0 0 0 0.1em hsl(var(--h) var(--s) var(--l)/0.5), 0 0.175em 0.3em hsl(var(--h) var(--s) var(--l)/0.8) inset, 0 -0.025em 0.175em hsl(var(--h) var(--s) var(--l)/0.4) inset, 0 -0.25em 1em 0.3em hsl(var(--h) var(--s) var(--l)/0.3) inset, 0 0.6em 0 hsl(var(--h) var(--s) var(--l)/0.3) inset, 0 1em 0.5em rgba(0, 0, 0, 0.2666666667);
+  backdrop-filter: blur(0.08em);
+}
+
+.welcome-btn:active:before {
+  height: 1em;
+}
+
+.dots {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 100px;
+  height: 50px;
+  --red: #fc199a;
+  --close: radial-gradient(circle, var(--red), var(--red) 7px, transparent 8px);
+  background: var(--close) -28px no-repeat;
+  filter: brightness(0.5);
+  opacity: 0.75;
+  cursor: pointer;
+  border: none;
+}
+
+.scrolle {
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  background-color: hsla(212, 11%, 60%, 0);
+  border-radius: 50px;
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+}
+
+.first {
+  margin-top: 25vh;
+  font-size: 70px;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 200;
+  text-align: center;
+  letter-spacing: 0.75em;
+  color: rgb(109, 17, 55);
+}
+
+.title {
+  margin-top: -50px;
+  font-size: 50px;
+  font-family: "Rajdhani", sans-serif;
+  letter-spacing: 0.25em;
+  text-align: center;
+  color: rgb(109, 17, 55);
+}
+
+.second {
+  padding-top: 0;
+  margin-top: 220px;
+  font-size: 60px;
+  text-align: center;
+  color: rgb(109, 17, 55);
+}
+
+.aboutme {
+  display: inline-block;
+  padding: 0 0 0 10vh;
+  align-items: start;
+  color: rgb(109, 17, 55);
+  font-size: 30px;
+  word-break: break-word;
+  text-align: center;
+  width: 50vh;
+}
+
+/* Explanation in JS tab */
+#container {
+  /* Center the text in the viewport. */
+  display: inline-block;
+  float: block-start;
+  margin: 0 0 0 10vh;
+  width: 25vh;
+  height: 25vh;
+  /* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
+  filter: url(#threshold) blur(0.6px);
+}
+
+/* Your average text styling */
+#text1,
+#text2 {
+  position: absolute;
+  color: rgb(109, 17, 55);
+  width: 100%;
+  word-break: break-word;
+  font-family: "Raleway", sans-serif;
+  font-size: 50pt;
+  text-align: center;
+  user-select: none;
+}
+
+#filters {
+  margin: auto;
+}
+
+.rounded {
+  margin-top: 35vh;
+  border-top: 8px solid #fff;
+  border-radius: 5px;
+}
+
+.skills {
+  padding-top: 20vh;
+  color: rgb(109, 17, 55);
+  font-size: 60px;
+  margin-left: 25vh;
+}
+
+.pskills {
+  display: inline-block;
+  margin-left: 10vh;
+  color: rgb(109, 17, 55);
+  font-size: 30px;
+  word-break: break-word;
+  width: 50vh;
+}
+
+.portfolio {
+  padding-top: 10vh;
+  color: rgb(109, 17, 55);
+  font-size: 70px;
+  text-align: center;
+}
+
+.contactme {
+  margin-left: 10vh;
+  padding-top: 10vh;
+  color: rgb(109, 17, 55);
+  font-size: 60px;
+}
+
+.cmstatement {
+  margin-left: 10vh;
+  margin-top: -50px;
+  padding-bottom: 40vh;
+  word-break: break-word;
+  width: 50vh;
+  color: rgb(109, 17, 55);
+  font-size: 30px;
+}
+
+/*# sourceMappingURL=/glass.5455a81c.css.map */
