@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
 .welcome-btn-container {
   box-sizing: border-box;
   margin: 0;
@@ -199,77 +199,119 @@ body {
   width: 50vh;
 }
 
-.tagline,
-.tagline-skill {
-  height: 90px;
-}
-
-.tagline {
-  font-family: "Fira Mono", monospace;
-  overflow: hidden;
-  background-color: hsla(212, 11%, 60%, 0);
-  backdrop-filter: blur(0.4em);
-  color: #fff;
-}
-
-.tagline-skill {
+.wrapper {
   position: relative;
-  font-size: 3em;
-  animation: animatetotop 6s steps(3) infinite;
-}
-
-.tagline-skill_inner,
-.tagline-skill-overlay {
-  display: inline-block;
-}
-
-.tagline-skill_inner {
-  position: relative;
-  line-height: 1;
-}
-
-.tagline-skill_inner:after {
-  content: "";
-  position: absolute;
-  top: -1px;
-  right: 0;
-  bottom: -5px;
-  left: 0;
-  border-left: 1px solid #fff;
-  background-color: #655cb0;
-  animation: animatetoright 1s steps(10) infinite alternate;
-}
-
-@keyframes animatetoright {
-  0% {
-    left: 0;
-    margin-right: auto;
-  }
-  100% {
-    left: 100%;
-    margin-left: 0.6em;
-    margin-right: -0.6em;
-  }
-}
-@keyframes animatetotop {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -240px;
-  }
-}
-header {
-  text-align: center;
-  display: inline-block;
   float: block-start;
+  width: 300px;
+  height: 300px;
+  top: 170%;
+  left: 70%;
+  transform: translate(-50%, -50%) translateY(20px) scale(1.5);
+  overflow: hidden;
 }
 
-header .tagline,
-.tagline-skill {
-  width: 315px;
-  display: block;
-  font-weight: 400;
+@media screen and (max-width: 600px) {
+  .wrapper {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.container {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+}
+
+[data-typing] {
+  position: absolute;
+  top: 0;
+  /*   border: 1px solid #f55; */
+  transform-origin: 0% 0%;
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  top: 100px;
+  line-height: 1;
+  color: #333;
+}
+
+[data-typing=i] {
+  top: 0;
+  left: 50px;
+  font-size: 90px;
+  height: 70px;
+  line-height: 70px;
+}
+
+[data-typing=frontend] {
+  top: 3px;
+  left: 80px;
+  font-size: 27px;
+  letter-spacing: 1px;
+}
+
+[data-typing=engineer] {
+  top: 30px;
+  left: 80px;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+[data-typing=with] {
+  top: 74px;
+  left: 265px;
+  font-size: 36px;
+  transform: rotate(90deg);
+  background: #333;
+  color: #fff;
+  padding: 0px 4px;
+}
+
+[data-typing=javascript] {
+  top: 74px;
+  left: 229px;
+  transform: rotate(90deg);
+  font-size: 35px;
+}
+
+[data-typing=typescript] {
+  top: 72px;
+  right: 110px;
+  font-size: 25px;
+}
+
+[data-typing=css] {
+  top: 97px;
+  right: 110px;
+  font-size: 40px;
+}
+
+[data-typing=nodejs] {
+  top: 134px;
+  right: 110px;
+  font-size: 35px;
+}
+
+[data-typing=animation] {
+  top: 167px;
+  right: 110px;
+  font-size: 35px;
+}
+
+[data-typing=scenejs] {
+  top: 200px;
+  right: 110px;
+  font-size: 30px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+body .scenejs-editor-timeline {
+  position: fixed;
+  bottom: 0;
+  max-height: 300px;
 }
 
 .portfolio {
