@@ -199,6 +199,79 @@ body {
   width: 50vh;
 }
 
+.tagline,
+.tagline-skill {
+  height: 90px;
+}
+
+.tagline {
+  font-family: "Fira Mono", monospace;
+  overflow: hidden;
+  background-color: hsla(212, 11%, 60%, 0);
+  backdrop-filter: blur(0.4em);
+  color: #fff;
+}
+
+.tagline-skill {
+  position: relative;
+  font-size: 3em;
+  animation: animatetotop 6s steps(3) infinite;
+}
+
+.tagline-skill_inner,
+.tagline-skill-overlay {
+  display: inline-block;
+}
+
+.tagline-skill_inner {
+  position: relative;
+  line-height: 1;
+}
+
+.tagline-skill_inner:after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 0;
+  bottom: -5px;
+  left: 0;
+  border-left: 1px solid #fff;
+  background-color: #655cb0;
+  animation: animatetoright 1s steps(10) infinite alternate;
+}
+
+@keyframes animatetoright {
+  0% {
+    left: 0;
+    margin-right: auto;
+  }
+  100% {
+    left: 100%;
+    margin-left: 0.6em;
+    margin-right: -0.6em;
+  }
+}
+@keyframes animatetotop {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -240px;
+  }
+}
+header {
+  text-align: center;
+  display: inline-block;
+  float: block-start;
+}
+
+header .tagline,
+.tagline-skill {
+  width: 315px;
+  display: block;
+  font-weight: 400;
+}
+
 .portfolio {
   padding-top: 10vh;
   color: rgb(109, 17, 55);
