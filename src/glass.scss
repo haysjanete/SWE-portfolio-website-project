@@ -256,11 +256,40 @@ body {
 .cmstatement {
   margin-left: 10vh;
   margin-top: -50px;
-  padding-bottom: 40vh;
+  padding-bottom: -5vh;
   word-break: break-word;
   width: 50vh;
   color: rgb(109, 17, 55);
   font-size: 30px;
+}
+
+.email {
+  margin-left: 10vh;
+  color: rgb(109, 17, 55);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.phone {
+  margin-left: 10vh;
+  color: rgb(109, 17, 55);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.resume {
+  margin-left: 10vh;
+  color: rgb(109, 17, 55);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.githublink {
+  margin-left: 10vh;
+  margin-bottom: 30vh;
+  color: rgb(109, 17, 55);
+  font-size: 25px;
+  font-weight: bold;
 }
 
 // about me pictures//
