@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="src/background.scss" />
     <link rel="stylesheet" href="src/glass.scss" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+    <script src="//daybrush.com/scenejs/release/latest/dist/scene.js"></script>
+    <script src="//daybrush.com/scenejs-effects/release/latest/dist/effects.js"></script>
+    <script src="//daybrush.com/codepen/scene.js"></script>
   <body>
     <!-- background -->
     <div id="app"></div>
@@ -217,7 +220,7 @@
             at my <a href="#projects">projects</a>!
           </p>
           <div class="wrapper">
-            <div class="skillcontainer">
+            <div class="scontainer">
               <a target="_blank" data-typing="i">I</a>
               <a target="_blank" data-typing="frontend">'m a Front-End</a>
               <a target="_blank" data-typing="engineer">Engineer</a>
@@ -234,7 +237,7 @@
               /*
               https://github.com/daybrush/scenejs
               */
-              const scene = new THREE.Scene({
+              const scene = new Scene({
                 ".scontainer": {} },
               {
                 selector: true });

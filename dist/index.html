@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="/background.b8d19d5c.css">
     <link rel="stylesheet" href="/glass.5455a81c.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+    <script src="//daybrush.com/scenejs/release/latest/dist/scene.js"></script>
+    <script src="//daybrush.com/scenejs-effects/release/latest/dist/effects.js"></script>
+    <script src="//daybrush.com/codepen/scene.js"></script>
   <script src="/background.b8d19d5c.js"></script><script src="/glass.5455a81c.js"></script></head><body>
     <!-- background -->
     <div id="app"></div>
@@ -182,7 +185,7 @@ animate();</script>
             at my <a href="#projects">projects</a>!
           </p>
           <div class="wrapper">
-            <div class="skillcontainer">
+            <div class="scontainer">
               <a target="_blank" data-typing="i">I</a>
               <a target="_blank" data-typing="frontend">'m a Front-End</a>
               <a target="_blank" data-typing="engineer">Engineer</a>
@@ -202,7 +205,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 /*
               https://github.com/daybrush/scenejs
               */
-var scene = new THREE.Scene({
+var scene = new Scene({
   ".scontainer": {}
 }, {
   selector: true
