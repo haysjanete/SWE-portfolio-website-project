@@ -215,7 +215,7 @@ body {
     transform: translate(-50%, -50%) scale(1);
   }
 }
-.container {
+.skillcontainer {
   position: absolute;
   width: 300px;
   height: 300px;
@@ -308,7 +308,7 @@ a {
   text-decoration: none;
 }
 
-body .scenejs-editor-timeline {
+.scenejs-editor-timeline {
   position: fixed;
   bottom: 0;
   max-height: 300px;
