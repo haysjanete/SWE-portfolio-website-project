@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="src/background.scss" />
     <link rel="stylesheet" href="src/glass.scss" />
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
   <body>
     <!-- background -->
     <div id="app"></div>
@@ -230,29 +230,35 @@
               <a target="_blank" data-typing="scenejs">& React.js</a>
             </div>
           </div>
-          <script type="text/babel">
-              const scene = new Scene(
-                {
-                  ".container": {}
-                },
-                {
-                  selector: true
-                }
-              );
-              const item = scene.getItem(".container");
+          <script>
+              /*
+              https://github.com/daybrush/scenejs
+              */
+              const scene = new THREE.Scene({
+                ".scontainer": {} },
+              {
+                selector: true });
+
+
+              const item = scene.getItem(".scontainer");
+
+
               function move(startTime, endTime, left, top, rotate, scale) {
                 item.set({
                   [`${startTime}, ${endTime}`]: Scene.kineticFrame({
                     left: `${left}px`,
-                    top: `${top}px`
-                  }).set({
+                    top: `${top}px` }).
+                  set({
                     transform: {
                       rotate: `${rotate}deg`,
-                      scale
-                    }
-                  })
-                });
+                      scale } }) });
+
+
+
               }
+
+
+
               move(0, 0, 90, 115, 0, 5);
               move(1, 1, 90, 115, 0, 2);
               move(2, 3, 0, 115, 0, 1);
@@ -265,70 +271,42 @@
               move(13, 13.5, 35, -70, 0, 2);
               move(14.5, 18, 0, 0, 0, 1);
 
+
               /*
               typing
               https://github.com/daybrush/scenejs-effects
               */
               scene.set({
-                "[data-typing='i']": Scene.typing({
-                  text: "I ",
-                  duration: 1
-                }),
+                "[data-typing='i']": Scene.typing({ text: "I ", duration: 1 }),
                 "[data-typing='frontend']": {
-                  1: Scene.typing({
-                    text: "'m a Front-End",
-                    duration: 1
-                  })
-                },
+                  1: Scene.typing({ text: "'m Front-End", duration: 1 }) },
+
                 "[data-typing='engineer']": {
-                  1.5: Scene.typing({
-                    text: "Engineer",
-                    duration: 1
-                  })
-                },
+                  1.5: Scene.typing({ text: "Engineer", duration: 1 }) },
+
                 "[data-typing='with']": {
-                  3.3: Scene.typing({
-                    text: "with",
-                    duration: 0.5
-                  })
-                },
+                  3.3: Scene.typing({ text: "with", duration: 0.5 }) },
+
                 "[data-typing='javascript']": {
-                  4.5: Scene.typing({
-                    text: "JavaScript",
-                    duration: 1
-                  })
-                },
+                  4.5: Scene.typing({ text: "JavaScript", duration: 1 }) },
+
                 "[data-typing='typescript']": {
-                  6: Scene.typing({
-                    text: "HTML",
-                    duration: 1
-                  })
-                },
+                  6: Scene.typing({ text: "TypeScript", duration: 1 }) },
+
                 "[data-typing='css']": {
-                  7.5: Scene.typing({
-                    text: "CSS",
-                    duration: 0.7
-                  })
-                },
+                  7.5: Scene.typing({ text: "CSS", duration: 0.7 }) },
+
                 "[data-typing='nodejs']": {
-                  9: Scene.typing({
-                    text: "Node.js",
-                    duration: 1
-                  })
-                },
+                  9: Scene.typing({ text: "Node.js", duration: 1 }) },
+
                 "[data-typing='animation']": {
-                  10.5: Scene.typing({
-                    text: "Python",
-                    duration: 1
-                  })
-                },
+                  10.5: Scene.typing({ text: "Animation", duration: 1 }) },
+
                 "[data-typing='scenejs']": {
-                  12: Scene.typing({
-                    text: "& React.js",
-                    duration: 1
-                  })
-                }
-              });
+                  12: Scene.typing({ text: "Scene.js", duration: 1 }) } });
+
+
+
               scene.setPlaySpeed(1);
               scene.setEasing("ease-in-out");
               scene.setIterationCount("infinite");
