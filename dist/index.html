@@ -182,114 +182,95 @@ animate();</script>
           </p>
           <div class="wrapper">
             <div class="container">
-              <a target="_blank" data-typing="i">I</a>
-              <a target="_blank" data-typing="frontend">'m a Front-End</a>
-              <a target="_blank" data-typing="engineer">Engineer</a>
+              <a href="https://github.com/daybrush" target="_blank" data-typing="i">I</a>
+              <a href="https://github.com/daybrush" target="_blank" data-typing="frontend">'m a Front-End</a>
+              <a href="https://github.com/daybrush" target="_blank" data-typing="engineer">Engineer</a>
               <p data-typing="with">with</p>
               <p data-typing="javascript">JavaScript</p>
               <p data-typing="typescript">HTML</p>
               <p data-typing="css">CSS</p>
               <p data-typing="nodejs">Node.js</p>
               <p data-typing="animation">Python</p>
-              <a target="_blank" data-typing="scenejs">& React.js</a>
+              <a href="https://github.com/daybrush/scenejs" target="_blank" data-typing="scenejs">& React.js</a>
             </div>
           </div>
-          <script>function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-var scene = new Scene({
-  ".container": {}
-}, {
-  selector: true
-});
-var item = scene.getItem(".container");
-function move(startTime, endTime, left, top, rotate, scale) {
-  item.set(_defineProperty({}, "".concat(startTime, ", ").concat(endTime), Scene.kineticFrame({
-    left: "".concat(left, "px"),
-    top: "".concat(top, "px")
-  }).set({
-    transform: {
-      rotate: "".concat(rotate, "deg"),
-      scale: scale
-    }
-  })));
-}
-move(0, 0, 90, 115, 0, 5);
-move(1, 1, 90, 115, 0, 2);
-move(2, 3, 0, 115, 0, 1);
-move(4, 4.5, -100, 0, -90, 2);
-move(5.5, 6, -52, -18, -90, 1.6);
-move(7, 7.5, 30, 45, 0, 2);
-move(8.5, 9, 10, 30, 0, 3);
-move(10, 10.5, 28, 0, 0, 2.2);
-move(11.5, 12, 50, -35, 0, 1.65);
-move(13, 13.5, 35, -70, 0, 2);
-move(14.5, 18, 0, 0, 0, 1);
-scene.set({
-  "[data-typing='i']": Scene.typing({
-    text: "I ",
-    duration: 1
-  }),
-  "[data-typing='frontend']": {
-    1: Scene.typing({
-      text: "'m a Front-End",
-      duration: 1
-    })
-  },
-  "[data-typing='engineer']": {
-    1.5: Scene.typing({
-      text: "Engineer",
-      duration: 1
-    })
-  },
-  "[data-typing='with']": {
-    3.3: Scene.typing({
-      text: "with",
-      duration: 0.5
-    })
-  },
-  "[data-typing='javascript']": {
-    4.5: Scene.typing({
-      text: "JavaScript",
-      duration: 1
-    })
-  },
-  "[data-typing='typescript']": {
-    6: Scene.typing({
-      text: "HTML",
-      duration: 1
-    })
-  },
-  "[data-typing='css']": {
-    7.5: Scene.typing({
-      text: "CSS",
-      duration: 0.7
-    })
-  },
-  "[data-typing='nodejs']": {
-    9: Scene.typing({
-      text: "Node.js",
-      duration: 1
-    })
-  },
-  "[data-typing='animation']": {
-    10.5: Scene.typing({
-      text: "Python",
-      duration: 1
-    })
-  },
-  "[data-typing='scenejs']": {
-    12: Scene.typing({
-      text: "& React.js",
-      duration: 1
-    })
-  }
-});
-scene.setPlaySpeed(1);
-scene.setEasing("ease-in-out");
-scene.setIterationCount("infinite");
-scene.play();</script>
+          <script src="//daybrush.com/scenejs/release/latest/dist/scene.js"></script>
+          <script src="//daybrush.com/scenejs-effects/release/latest/dist/effects.js"></script>
+          <script src="//daybrush.com/codepen/scene.js"></script>
+          <script type="text/babel">
+            const scene = new Scene({
+              ".container": {}
+            }, {
+              selector: true,
+            });
+
+            const item = scene.getItem(".container");
+
+
+            function move(startTime, endTime, left, top, rotate, scale) {
+              item.set({
+                [`${startTime}, ${endTime}`]: Scene.kineticFrame({
+                  left: `${left}px`,
+                  top: `${top}px`
+                }).set({
+                  transform: {
+                    rotate: `${rotate}deg`,
+                    scale,
+                  }
+                }),
+              });
+            }
+
+
+
+            move(0, 0, 90, 115, 0, 5);
+            move(1, 1, 90, 115, 0, 2);
+            move(2, 3, 0, 115, 0, 1);
+            move(4, 4.5, -100, 0, -90, 2);
+            move(5.5, 6, -52, -18, -90, 1.6);
+            move(7, 7.5, 30, 45, 0, 2);
+            move(8.5, 9,  10, 30, 0, 3);
+            move(10, 10.5, 28, 0, 0, 2.2);
+            move(11.5, 12, 50, -35, 0, 1.65);
+            move(13, 13.5, 35, -70, 0, 2);
+            move(14.5, 18, 0, 0, 0, 1);
+
+            scene.set({
+              "[data-typing='i']": Scene.typing({ text: "I ", duration: 1}),
+              "[data-typing='frontend']": {
+                1: Scene.typing({ text: "'m a Front-End", duration: 1}),
+              },
+              "[data-typing='engineer']": {
+                1.5: Scene.typing({ text: "Engineer", duration: 1}),
+              },
+              "[data-typing='with']": {
+                3.3: Scene.typing({ text: "with", duration: 0.5}),
+              },
+              "[data-typing='javascript']": {
+                4.5: Scene.typing({ text: "JavaScript", duration: 1}),
+              },
+              "[data-typing='typescript']": {
+                6: Scene.typing({ text: "HTML", duration: 1}),
+              },
+              "[data-typing='css']": {
+                7.5: Scene.typing({ text: "CSS", duration: 0.7}),
+              },
+              "[data-typing='nodejs']": {
+                9: Scene.typing({ text: "Node.js", duration: 1}),
+              },
+              "[data-typing='animation']": {
+                10.5: Scene.typing({ text: "Python", duration: 1}),
+              },
+              "[data-typing='scenejs']": {
+                12: Scene.typing({ text: "& React.js", duration: 1}),
+              },
+            });
+
+            scene.setPlaySpeed(1);
+            scene.setEasing("ease-in-out");
+            scene.setIterationCount("infinite");
+            scene.play();
+          </script>
         <!-- portfolio projects -->
         <div class="rounded">
           <h2 class="portfolio" id="projects">Portfolio Projects</h2>
