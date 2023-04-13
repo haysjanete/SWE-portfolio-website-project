@@ -200,8 +200,9 @@ body {
 }
 
 .wrapper {
-  position: relative;
+  display: inline-block;
   float: block-start;
+  margin: 5vh 0 0 40vh;
   width: 300px;
   height: 300px;
   top: 170%;
