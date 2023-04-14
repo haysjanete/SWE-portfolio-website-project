@@ -150,7 +150,7 @@ body {
   font-size: 30px;
   word-break: break-word;
   text-align: center;
-  width: 80vh;
+  width: 70vh;
 }
 
 /* Explanation in JS tab */
@@ -158,9 +158,8 @@ body {
   /* Center the text in the viewport. */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin: -60vh 0 0 95vh;
+  margin: -20vh 0 0 70vh;
   width: 50vh;
-  height: 25vh;
   /* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
   filter: url(#threshold) blur(0.6px);
 }
@@ -196,19 +195,19 @@ body {
 }
 
 .pskills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin-left: 10vh;
+  display: inline-block;
+  padding: 0 0 15vh 10vh;
   color: rgb(109, 17, 55);
   font-size: 30px;
   word-break: break-word;
-  width: 50vh;
+  text-align: center;
+  width: 70vh;
 }
 
 .wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin: -60vh 0 0 95vh;
+  margin: -40vh 0 0 95vh;
   width: 300px;
   height: 300px;
   top: 170%;
@@ -440,7 +439,7 @@ a {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .contactme {
