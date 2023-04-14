@@ -140,8 +140,10 @@ body {
 }
 
 .first {
-  margin-top: 25vh;
-  font-size: 70px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 20vh;
+  font-size: 60px;
   font-family: "Rajdhani", sans-serif;
   font-weight: 200;
   text-align: center;
@@ -150,8 +152,10 @@ body {
 }
 
 .title {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-top: -50px;
-  font-size: 50px;
+  font-size: 40px;
   font-family: "Rajdhani", sans-serif;
   letter-spacing: 0.25em;
   text-align: center;
@@ -168,24 +172,25 @@ body {
 
 .aboutme {
   // margin-left: 20vh;
-  display: inline-block;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   padding: 0 0 0 10vh;
   align-items: start;
   color: rgb(109, 17, 55);
   font-size: 30px;
   word-break: break-word;
   text-align: center;
-  width: 50vh;
+  width: 80vh;
 }
 
 /* Explanation in JS tab */
 
 #container {
   /* Center the text in the viewport. */
-  display: inline-block;
-  float: block-start;
-  margin: 0 0 0 10vh;
-  width: 25vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: -60vh 0 0 95vh;
+  width: 50vh;
   height: 25vh;
 
   /* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
@@ -228,7 +233,9 @@ body {
 }
 
 .pskills {
-  display: inline-block;
+  // display: inline-block;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-left: 10vh;
   color: rgb(109, 17, 55);
   font-size: 30px;
@@ -253,9 +260,9 @@ body {
 // }
 .wrapper {
   // position: relative;
-  display: inline-block;
-  float: block-start;
-  margin: 5vh 0 0 40vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: -60vh 0 0 95vh;
   width: 300px;
   height: 300px;
   top: 170%;
