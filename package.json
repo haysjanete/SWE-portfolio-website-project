@@ -17,6 +17,7 @@
 		"pug": "^3.0.2",
 		"scss": "0.2.4"
 	},
+	"license": "MIT",
 	"devDependencies": {
 		"@babel/cli": "^7.21.0",
 		"@babel/core": "^7.2.0",
