@@ -1,0 +1,36 @@
+@import "https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600";
+@import "https://fonts.googleapis.com/css?family=La+Belle+Aurore";
+@import "https://fonts.googleapis.com/css?family=Exo:700,800";
+body {
+  background-image: url("https://66.media.tumblr.com/0f3927f0017e84b9c6ec69901c5a825a/tumblr_n9lwm7N7VX1tz79vpo1_r1_500.gif");
+  background-repeat: repeat;
+  background-size: auto 100%;
+  font-family: Titillium Web, sans-serif;
+  animation: 100s linear infinite bgMove;
+}
+
+@keyframes bgMove {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 199% 0;
+  }
+}
+
+.tags {
+  color: #fed0bb;
+  font-family: La Belle Aurore, cursive;
+  font-size: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 90px;
+}
+
+.top-tags {
+  top: 70px;
+  bottom: auto;
+}
+
+/*# sourceMappingURL=index.a1598aae.css.map */

@@ -3,13 +3,13 @@
   <head>
     <title>Janete Hays SWE</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/background.b8d19d5c.css">
-    <link rel="stylesheet" href="/glass.5455a81c.css">
+    <link rel="stylesheet" href="/index.a1598aae.css">
+    <link rel="stylesheet" href="/index.ea003d2f.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
     <script src="//daybrush.com/scenejs/release/latest/dist/scene.js"></script>
     <script src="//daybrush.com/scenejs-effects/release/latest/dist/effects.js"></script>
     <script src="//daybrush.com/codepen/scene.js"></script>
-  <script src="/background.b8d19d5c.js"></script><script src="/glass.5455a81c.js"></script></head><body>
+  </head><body>
     <!-- background -->
     <div id="app"></div>
     <div id="page">
@@ -28,41 +28,37 @@
     <section class="welcome-btn-container" id="welcome-btn-cont">
       <button class="welcome-btn" onclick="openGlass('glasscontainer');hideButton('welcome-btn-cont')">Welcome!</button>
       <script>function hideButton(id) {
-  var wbc = document.getElementById(id);
-  if (wbc.style.display == 'flex') {
-    wbc.style.display = "none";
-  } else {
-    wbc.style.display = "flex";
-  }
-}</script>
+    const wbc = document.getElementById(id);
+    if (wbc.style.display == "flex") wbc.style.display = "none";
+    else wbc.style.display = "flex";
+}
+
+</script>
       <script>function openGlass(id) {
-  var gc = document.getElementById(id);
-  if (gc.style.display == "none") {
-    gc.style.display = "flex";
-  } else {
-    gc.style.display = "none";
-  }
-}</script>
+    const gc = document.getElementById(id);
+    if (gc.style.display == "none") gc.style.display = "flex";
+    else gc.style.display = "none";
+}
+
+</script>
     </section>
     <!-- <main> -->
     <section class="glass" id="glasscontainer">
       <button class="dots" onclick="closeContainer('glasscontainer');glassBtn('welcome-btn-cont')" id="close-dot"></button>
       <script>function glassBtn(id) {
-  var wbc = document.getElementById(id);
-  if (wbc.style.display == "none") {
-    wbc.style.display = "flex";
-  } else {
-    wbc.style.display = "none";
-  }
-}</script>
+    const wbc = document.getElementById(id);
+    if (wbc.style.display == "none") wbc.style.display = "flex";
+    else wbc.style.display = "none";
+}
+
+</script>
       <script>function closeContainer(id) {
-  var cd = document.getElementById(id);
-  if (cd.style.display == "none") {
-    cd.style.display = "flex";
-  } else {
-    cd.style.display = "none";
-  }
-}</script>
+    const cd = document.getElementById(id);
+    if (cd.style.display == "none") cd.style.display = "flex";
+    else cd.style.display = "none";
+}
+
+</script>
       <nav>
         
       </nav>
@@ -86,7 +82,7 @@
         <!-- Explanation in JS tab -->
 
           <!-- The two texts -->
-            <div id="container">
+            </p><div id="container">
               <span id="text1"></span>
               <span id="text2"></span>
             </div>
@@ -96,82 +92,82 @@
               <defs>
                 <filter id="threshold">
                   <!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
-                  <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                  <fecolormatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
                               0 1 0 0 0
                               0 0 1 0 0
-                              0 0 0 255 -140"></feColorMatrix>
+                              0 0 0 255 -140"></fecolormatrix>
                 </filter>
               </defs>
             </svg>
-            </p>
-        <script>var elts = {
-  text1: document.getElementById("text1"),
-  text2: document.getElementById("text2")
+            <p></p>
+        <script>const elts = {
+    text1: document.getElementById("text1"),
+    text2: document.getElementById("text2")
 };
-
 // The strings to morph between. You can change these to anything you want!
-var texts = ["Software Engineer", "Front-end", "Back-end", "Book-worm", "Video game Nerd", "and", "Coding Addict"];
-
+const texts = [
+    "Software Engineer",
+    "Front-end",
+    "Back-end",
+    "Book-worm",
+    "Video game Nerd",
+    "and",
+    "Coding Addict"
+];
 // Controls the speed of morphing.
-var morphTime = 1;
-var cooldownTime = 0.25;
-var textIndex = texts.length - 1;
-var time = new Date();
-var morph = 0;
-var cooldown = cooldownTime;
+const morphTime = 1;
+const cooldownTime = 0.25;
+let textIndex = texts.length - 1;
+let time = new Date();
+let morph = 0;
+let cooldown = cooldownTime;
 elts.text1.textContent = texts[textIndex % texts.length];
 elts.text2.textContent = texts[(textIndex + 1) % texts.length];
 function doMorph() {
-  morph -= cooldown;
-  cooldown = 0;
-  var fraction = morph / morphTime;
-  if (fraction > 1) {
-    cooldown = cooldownTime;
-    fraction = 1;
-  }
-  setMorph(fraction);
+    morph -= cooldown;
+    cooldown = 0;
+    let fraction = morph / morphTime;
+    if (fraction > 1) {
+        cooldown = cooldownTime;
+        fraction = 1;
+    }
+    setMorph(fraction);
 }
-
 // A lot of the magic happens here, this is what applies the blur filter to the text.
 function setMorph(fraction) {
-  // fraction = Math.cos(fraction * Math.PI) / -2 + .5;
-
-  elts.text2.style.filter = "blur(".concat(Math.min(8 / fraction - 8, 100), "px)");
-  elts.text2.style.opacity = "".concat(Math.pow(fraction, 0.4) * 100, "%");
-  fraction = 1 - fraction;
-  elts.text1.style.filter = "blur(".concat(Math.min(8 / fraction - 8, 100), "px)");
-  elts.text1.style.opacity = "".concat(Math.pow(fraction, 0.4) * 100, "%");
-  elts.text1.textContent = texts[textIndex % texts.length];
-  elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+    // fraction = Math.cos(fraction * Math.PI) / -2 + .5;
+    elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+    elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+    fraction = 1 - fraction;
+    elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+    elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+    elts.text1.textContent = texts[textIndex % texts.length];
+    elts.text2.textContent = texts[(textIndex + 1) % texts.length];
 }
 function doCooldown() {
-  morph = 0;
-  elts.text2.style.filter = "";
-  elts.text2.style.opacity = "100%";
-  elts.text1.style.filter = "";
-  elts.text1.style.opacity = "0%";
+    morph = 0;
+    elts.text2.style.filter = "";
+    elts.text2.style.opacity = "100%";
+    elts.text1.style.filter = "";
+    elts.text1.style.opacity = "0%";
 }
-
 // Animation loop, which is called every frame.
 function animate() {
-  requestAnimationFrame(animate);
-  var newTime = new Date();
-  var shouldIncrementIndex = cooldown > 0;
-  var dt = (newTime - time) / 1000;
-  time = newTime;
-  cooldown -= dt;
-  if (cooldown <= 0) {
-    if (shouldIncrementIndex) {
-      textIndex++;
-    }
-    doMorph();
-  } else {
-    doCooldown();
-  }
+    requestAnimationFrame(animate);
+    let newTime = new Date();
+    let shouldIncrementIndex = cooldown > 0;
+    let dt = (newTime - time) / 1000;
+    time = newTime;
+    cooldown -= dt;
+    if (cooldown <= 0) {
+        if (shouldIncrementIndex) textIndex++;
+        doMorph();
+    } else doCooldown();
 }
-
 // Start the animation.
-animate();</script>
+animate();
+
+</script>
       </div>
         <!-- skills section -->
         <div class="rounded">
@@ -198,29 +194,26 @@ animate();</script>
               <a target="_blank" data-typing="scenejs">& React.js</a>
             </div>
           </div>
-          <script>function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-/*
+          <script>/*
               https://github.com/daybrush/scenejs
-              */
-var scene = new Scene({
-  ".scontainer": {}
+              */ const scene = new Scene({
+    ".scontainer": {}
 }, {
-  selector: true
+    selector: true
 });
-var item = scene.getItem(".scontainer");
+const item = scene.getItem(".scontainer");
 function move(startTime, endTime, left, top, rotate, scale) {
-  item.set(_defineProperty({}, "".concat(startTime, ", ").concat(endTime), Scene.kineticFrame({
-    left: "".concat(left, "px"),
-    top: "".concat(top, "px")
-  }).set({
-    transform: {
-      rotate: "".concat(rotate, "deg"),
-      scale: scale
-    }
-  })));
+    item.set({
+        [`${startTime}, ${endTime}`]: Scene.kineticFrame({
+            left: `${left}px`,
+            top: `${top}px`
+        }).set({
+            transform: {
+                rotate: `${rotate}deg`,
+                scale
+            }
+        })
+    });
 }
 move(0, 0, 90, 115, 0, 5);
 move(1, 1, 90, 115, 0, 2);
@@ -233,80 +226,80 @@ move(10, 10.5, 28, 0, 0, 2.2);
 move(11.5, 12, 50, -35, 0, 1.65);
 move(13, 13.5, 35, -70, 0, 2);
 move(14.5, 18, 0, 0, 0, 1);
-
 /*
-typing
-https://github.com/daybrush/scenejs-effects
-*/
-scene.set({
-  "[data-typing='i']": Scene.typing({
-    text: "I ",
-    duration: 1
-  }),
-  "[data-typing='frontend']": {
-    1: Scene.typing({
-      text: "'m a Front-End",
-      duration: 1
-    })
-  },
-  "[data-typing='engineer']": {
-    1.5: Scene.typing({
-      text: "Engineer",
-      duration: 1
-    })
-  },
-  "[data-typing='with']": {
-    3.3: Scene.typing({
-      text: "with",
-      duration: 0.5
-    })
-  },
-  "[data-typing='javascript']": {
-    4.5: Scene.typing({
-      text: "JavaScript",
-      duration: 1
-    })
-  },
-  "[data-typing='typescript']": {
-    6: Scene.typing({
-      text: "HTML",
-      duration: 1
-    })
-  },
-  "[data-typing='css']": {
-    7.5: Scene.typing({
-      text: "CSS",
-      duration: 0.7
-    })
-  },
-  "[data-typing='nodejs']": {
-    9: Scene.typing({
-      text: "Node.js",
-      duration: 1
-    })
-  },
-  "[data-typing='animation']": {
-    10.5: Scene.typing({
-      text: "Python",
-      duration: 1
-    })
-  },
-  "[data-typing='scenejs']": {
-    12: Scene.typing({
-      text: "& React.js",
-      duration: 1
-    })
-  }
+              typing
+              https://github.com/daybrush/scenejs-effects
+              */ scene.set({
+    "[data-typing='i']": Scene.typing({
+        text: "I ",
+        duration: 1
+    }),
+    "[data-typing='frontend']": {
+        1: Scene.typing({
+            text: "'m a Front-End",
+            duration: 1
+        })
+    },
+    "[data-typing='engineer']": {
+        1.5: Scene.typing({
+            text: "Engineer",
+            duration: 1
+        })
+    },
+    "[data-typing='with']": {
+        3.3: Scene.typing({
+            text: "with",
+            duration: 0.5
+        })
+    },
+    "[data-typing='javascript']": {
+        4.5: Scene.typing({
+            text: "JavaScript",
+            duration: 1
+        })
+    },
+    "[data-typing='typescript']": {
+        6: Scene.typing({
+            text: "HTML",
+            duration: 1
+        })
+    },
+    "[data-typing='css']": {
+        7.5: Scene.typing({
+            text: "CSS",
+            duration: 0.7
+        })
+    },
+    "[data-typing='nodejs']": {
+        9: Scene.typing({
+            text: "Node.js",
+            duration: 1
+        })
+    },
+    "[data-typing='animation']": {
+        10.5: Scene.typing({
+            text: "Python",
+            duration: 1
+        })
+    },
+    "[data-typing='scenejs']": {
+        12: Scene.typing({
+            text: "& React.js",
+            duration: 1
+        })
+    }
 });
 scene.setPlaySpeed(1);
 scene.setEasing("ease-in-out");
 scene.setIterationCount("infinite");
-scene.play();</script>
+scene.play();
+
+</script>
         <!-- portfolio projects -->
         <div class="rounded">
           <h2 class="portfolio" id="projects">Portfolio Projects</h2>
           <p>
-            <ul class="cards">
+            </p><ul class="cards">
               <li>
                 <a href="https://github.com/haysjanete/Scrumptious-Recipes" class="card">
                   <img src="https://i.imgur.com/oYiTqum.jpg" class="card__image" alt="">
@@ -380,7 +373,7 @@ scene.play();</script>
                 </a>
               </li>    
             </ul>
-          </p>
+          <p></p>
         </div>
         <!-- contact me page -->
         <div class="rounded">
@@ -388,13 +381,13 @@ scene.play();</script>
           <p class="cmstatement">
             If you are interested in a personal project do not hesitate to contact
             me to discuss what you are trying to achieve!
-          <div class="email">martinezjanete8@gmail.com</div>
+          </p><div class="email">martinezjanete8@gmail.com</div>
           <div class="phone">682-582-0843</div>
           <div class="resume"><a href="https://www.canva.com/design/DAFf2xWxNuI/wT73njNWnAL_o8zU0867Hg/view?utm_content=DAFf2xWxNuI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelinkhttps://www.canva.com/design/DAFf2xWxNuI/wT73njNWnAL_o8zU0867Hg/view?utm_content=DAFf2xWxNuI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Resume</a></div>
           <div class="githublink"><a href="https://github.com/haysjanete">GitHub</a></div>
-          </p>
+          <p></p>
         </div>
       </div>
     </div></section>
-  </body>
+  <script src="/workspace.3464ddca.js"></script></body>
 </html>
