@@ -2,10 +2,11 @@
   "name": "swe-portfolio-website-project",
   "version": "1.0.0",
   "description": "",
+  "source": "index.html",
   "scripts": {
-	  "start": "parcel",
-	  "build": "parcel build"
-  		},
+    "start": "parcel",
+    "build": "parcel build"
+  },
   "dependencies": {
     "@babel/standalone": "^7.21.4",
     "@emotion/react": "^11.10.6",
