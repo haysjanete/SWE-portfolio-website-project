@@ -32,7 +32,6 @@ body {
   backdrop-filter: blur(0.4em);
   background: hsla(212, 11%, 60%, 0);
   transition: 0.3s ease;
-  mix-blend-mode: hard-light;
 }
 @media screen and (max-height: 480px) {
   .glass {
