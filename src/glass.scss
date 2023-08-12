@@ -66,6 +66,12 @@ body {
   padding-top: 0.2em;
 }
 
+p {
+  font-size: 1.1rem;
+  position: relative;
+  margin: 0;
+}
+
 .welcome-btn:after {
   content: "";
   inset: 0;

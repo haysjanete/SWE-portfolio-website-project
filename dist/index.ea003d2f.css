@@ -57,6 +57,12 @@ body {
   transition: all .1s;
 }
 
+p {
+  margin: 0;
+  font-size: 1.1rem;
+  position: relative;
+}
+
 .welcome-btn:after {
   content: "";
   background-image: linear-gradient(105deg, transparent 20%, hsl(var(--h) var(--s) var(--l) / .2) 20%, hsl(var(--h) var(--s) var(--l) / .2) 30%, transparent 30%, transparent 32%, hsl(var(--h) var(--s) var(--l) / .2) 5%, hsl(var(--h) var(--s) var(--l) / .2) 40%, transparent 0%);
